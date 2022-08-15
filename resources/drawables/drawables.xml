@@ -1,0 +1,8 @@
+<drawables>
+    <bitmap id="LauncherIcon" filename="mvv-logo.png" />
+    <bitmap id="busIcon" filename="bus.png" />
+    <bitmap id="sbahnIcon" filename="sbahn.png" />
+    <bitmap id="tramIcon" filename="tram.png" />
+    <bitmap id="ubahnIcon" filename="ubahn.png" />
+    <bitmap id="starIcon" filename="star.png" />
+</drawables>

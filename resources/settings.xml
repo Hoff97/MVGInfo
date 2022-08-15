@@ -1,0 +1,8 @@
+<settings>
+  <setting propertyKey="@Properties.favourites" title="@Strings.favouritesTitle" prompt="@Strings.favouritesPrompt">
+    <setting title="@Strings.favouriteName" type="string">
+      <settingConfig type="alphaNumeric" id="name" required="true" readonly="false">
+      </settingConfig>
+    </setting>
+  </setting>
+</settings>

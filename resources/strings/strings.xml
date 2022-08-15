@@ -1,0 +1,6 @@
+<strings>
+    <string id="AppName">MVVInfo</string>
+    <string id="favouritesTitle">Favourites</string>
+    <string id="favouritesPrompt">Select favourite stations (separated by commas)</string>
+    <string id="favouriteName">Name of station</string>
+</strings>
