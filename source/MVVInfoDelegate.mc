@@ -27,6 +27,30 @@ class MVVInfoDelegate extends WatchUi.BehaviorDelegate {
         _position = position;
     }
 
+    function mergeStationsAndFavourites(_stations) {
+        if (_stations == null) {
+            _stations = [];
+        }
+        var favourites = Storage.getValue("favourites");
+        if (favourites != null) {
+            for (var i = 0; i < favourites.size(); i++) {
+                var favourite = favourites[i];
+                var alreadyContained = false;
+                for (var j = 0; j < _stations.size(); j++) {
+                    if (favourite["id"].equals(_stations[j]["id"])) {
+                        _stations[j]["favourite"] = true;
+                        alreadyContained = true;
+                        break;
+                    }
+                }
+                if (!alreadyContained) {
+                    _stations.add(favourite);
+                }
+            }
+        }
+        return _stations;
+    }
+
     //! Handle going to the next view
     //! @return true if handled, false otherwise
     public function onNextPage() as Boolean {

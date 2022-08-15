@@ -15,6 +15,8 @@ class MVVInfoApp extends Application.AppBase {
   function initialize() {
     AppBase.initialize();
     _glanceView = new $.MVVGlanceView();
+
+    Storage.setValue("stations", null);
   }
 
     // onStart() is called on application start up
@@ -67,11 +69,14 @@ class MVVInfoApp extends Application.AppBase {
   }
 
   public function onSettingsChanged() {
+    Storage.setValue("favourites", null);
     queryFavourites();
   }
 
   public function queryFavourites() as Void {
-    Storage.setValue("favourites", []);
+    if (Storage.getValue("favourites") == null) {
+      Storage.setValue("favourites", []);
+    }
 
     var options = {
       :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON,

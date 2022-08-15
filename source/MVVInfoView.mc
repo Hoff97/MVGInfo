@@ -33,6 +33,30 @@ class MVVInfoView extends WatchUi.View {
         _indicator = new $.PageIndicator(num_pages, selected, notSelected, alignment, margin);
     }
 
+    function mergeStationsAndFavourites(_stations) {
+        if (_stations == null) {
+            _stations = [];
+        }
+        var favourites = Storage.getValue("favourites");
+        if (favourites != null) {
+            for (var i = 0; i < favourites.size(); i++) {
+                var favourite = favourites[i];
+                var alreadyContained = false;
+                for (var j = 0; j < _stations.size(); j++) {
+                    if (favourite["id"].equals(_stations[j]["id"])) {
+                        _stations[j]["favourite"] = true;
+                        alreadyContained = true;
+                        break;
+                    }
+                }
+                if (!alreadyContained) {
+                    _stations.add(favourite);
+                }
+            }
+        }
+        return _stations;
+    }
+
     // Called when this View is brought to the foreground. Restore
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
