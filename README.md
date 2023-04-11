@@ -6,3 +6,5 @@ in the munich public public transport. You can download it [here](https://apps.g
 ![See stations near you](example_1.png "See stations near you")
 ![Get current departures](example_2.png "Get current departures")
 ![See delays](example_3.png "See delays")
+
+After installing, set favourite stations via the Connect IQ app.
